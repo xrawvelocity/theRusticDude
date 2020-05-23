@@ -1,0 +1,44 @@
+.home {
+  display: flex;
+  justify-content: space-around;
+  height: 70vh;
+  padding: 0 10%;
+
+  &-cta {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    width: 40%;
+
+    &_text {
+      width: 90%;
+      color: $black;
+    }
+
+    &_button {
+      margin: 5rem 0;
+      background-color: $accent;
+      color: $black;
+      padding: 1rem 1.5rem;
+      border-radius: 3px;
+      font-size: 2.2rem;
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+  }
+
+  &-image {
+    width: 60%;
+    background-image: url("../images/woodwork.jpg");
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    object-fit: cover;
+  }
+}

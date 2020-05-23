@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+import { Link, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Projects from "./components/Projects";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Faq from "./components/FAQ";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <nav className="navigation">
+          <Link to="/" className="navigation-logo">
+            <img className="navigation-logo_image" src="./images/theRusticDudeLogoImage.png" alt="logo" />
+            <img className="navigation-logo_text" src="./images/theRusticDudeLogoText.png" alt="logo" />
+          </Link>
+          <div className="navigation-links">
+            <Link to="/projects" className="navigation-links_projects">
+              Projects
+            </Link>
+            <Link to="/about" className="navigation-links_about">
+              About
+            </Link>
+            <Link to="/contact" className="navigation-links_contact">
+              Contact
+            </Link>
+            <Link to="/FAQ" className="navigation-links_FAQ">
+              FAQ
+            </Link>
+          </div>
+        </nav>
+        <main>
+          <Switch>
+            <Route exact path="/" render={(props) => <Home {...props} />} />
+            <Route exact path="/projects" render={(props) => <Projects {...props} />} />
+            <Route exact path="/about" render={(props) => <About {...props} />} />
+            <Route exact path="/contact" render={(props) => <Contact {...props} />} />
+            <Route exact path="/Faq" render={(props) => <Faq {...props} />} />
+          </Switch>
+        </main>
+      </Fragment>
+    );
+  }
 }
-
-export default App;

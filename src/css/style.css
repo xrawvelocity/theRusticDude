@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; }
+  *:focus, *:active {
+    outline: none !important; }
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: #f7f7f1;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 100em) {
+    html {
+      font-size: 60%; } }
+  @media only screen and (max-width: 90em) {
+    html {
+      font-size: 56.25%;
+      overflow-y: visible !important; } }
+  @media only screen and (max-width: 65em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 44em) {
+    html {
+      font-size: 40%; } }
+
+body {
+  font-family: "archiaregular", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+a:link,
+a:visited {
+  color: #0d65f1; }
+
+a:focus,
+a:active {
+  outline: none; }
+
+::-moz-selection {
+  background-color: #fff;
+  color: #e78200; }
+
+::selection {
+  background-color: #fff;
+  color: #e78200; }
+
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #000; }
+
+body::-webkit-scrollbar {
+  width: 7px;
+  background-color: #000; }
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #ccc; }
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10% 0 5%; }
+  .navigation-logo {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 400px;
+    object-fit: cover; }
+    .navigation-logo_image {
+      transform: scale(0.5); }
+    .navigation-logo_text {
+      transform: scale(1);
+      margin-left: -5rem; }
+  .navigation-links {
+    display: flex; }
+    .navigation-links > *, .navigation-links > *:link, .navigation-links > *:visited {
+      text-decoration: none;
+      color: #131312;
+      font-family: "Ubuntu";
+      margin-left: 3rem;
+      font-size: 2.4rem; }
+      .navigation-links > *::after, .navigation-links > *:link::after, .navigation-links > *:visited::after {
+        content: "";
+        position: relative;
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #131312;
+        transform: scaleX(0);
+        transform-origin: 0%;
+        transition: transform 500ms ease;
+        top: 2px; }
+      .navigation-links > *:hover::after, .navigation-links > *:link:hover::after, .navigation-links > *:visited:hover::after {
+        transform: scaleX(1); }
+      .navigation-links > *:hover, .navigation-links > *:link:hover, .navigation-links > *:visited:hover {
+        cursor: pointer; }
+
+.home {
+  display: flex;
+  justify-content: space-around;
+  height: 70vh;
+  padding: 0 10%; }
+  .home-cta {
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    width: 40%; }
+    .home-cta_text {
+      width: 90%;
+      color: #131312; }
+    .home-cta_button {
+      margin: 5rem 0;
+      background-color: #e78200;
+      color: #131312;
+      padding: 1rem 1.5rem;
+      border-radius: 3px;
+      font-size: 2.2rem; }
+      .home-cta_button, .home-cta_button:link, .home-cta_button:visited {
+        text-decoration: none;
+        color: #131312; }
+  .home-image {
+    width: 60%;
+    background-image: url("../images/woodwork.jpg");
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    object-fit: cover; }
