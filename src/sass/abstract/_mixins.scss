@@ -1,0 +1,55 @@
+@mixin respond($breakpoint) {
+  @if ($breakpoint == smallphone) {
+    @media only screen and (max-width: 35em) {
+      @content;
+    } //560px
+  }
+  @if ($breakpoint == phone) {
+    @media only screen and (max-width: 44em) {
+      @content;
+    } //600px?
+  }
+  @if ($breakpoint == tab-port) {
+    @media only screen and (max-width: 65em) {
+      @content;
+    } //900px?
+  }
+  @if ($breakpoint == tab-land) {
+    @media only screen and (max-width: 90em) {
+      @content;
+    } //1200px?
+  }
+  @if ($breakpoint == normal-desktop) {
+    @media only screen and (max-width: 100em) {
+      @content;
+    } //1200px?
+  }
+  @if ($breakpoint == big-desktop) {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}
+
+@mixin animBorder($time) {
+  &::after {
+    content: "";
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: transform $time ease;
+    top: 2px;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
