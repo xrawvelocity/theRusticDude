@@ -53,6 +53,7 @@
       border-radius: 3px;
       font-size: 2.2rem;
       font-weight: 500;
+      border: none;
 
       animation: moveInBottom 1s ease 0.75s;
       animation-fill-mode: backwards;
@@ -71,6 +72,7 @@
         color: #fff;
         transform: translateY(-.5rem);
         box-shadow: 0 .5rem .5rem $black;
+        cursor: pointer;
       }
 
       &::before,

@@ -187,6 +187,7 @@ body::-webkit-scrollbar-thumb {
       border-radius: 3px;
       font-size: 2.2rem;
       font-weight: 500;
+      border: none;
       animation: moveInBottom 1s ease 0.75s;
       animation-fill-mode: backwards;
       transition: all .4s ease; }
@@ -197,7 +198,8 @@ body::-webkit-scrollbar-thumb {
         background-color: #FFA42D;
         color: #fff;
         transform: translateY(-0.5rem);
-        box-shadow: 0 0.5rem 0.5rem #131312; }
+        box-shadow: 0 0.5rem 0.5rem #131312;
+        cursor: pointer; }
       .home-cta_button::before, .home-cta_button::after {
         clear: both;
         display: none; }
@@ -336,17 +338,19 @@ body::-webkit-scrollbar-thumb {
         .home-contact-form-group__input:hover {
           cursor: text; }
     .home-contact-form-button {
-      background-color: #ddd;
-      color: #111;
+      background-color: #e78200;
+      color: #f7f7f1;
       font-size: 3rem;
-      border: 1px solid #111;
       border-radius: 3px;
+      border: none;
       padding: 1rem 1.5rem;
       text-transform: uppercase;
       margin-top: 3rem;
       align-self: center;
-      transition: all 0.2s ease-out; }
+      transition: all 0.4s ease; }
       .home-contact-form-button:hover {
-        background-color: #131312;
-        color: #222;
+        background-color: #FFA42D;
+        color: #fff;
+        transform: translateY(-0.5rem);
+        box-shadow: 0 0.5rem 0.5rem #131312;
         cursor: pointer; }

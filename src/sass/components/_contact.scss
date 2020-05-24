@@ -209,20 +209,22 @@
     }
 
     &-button {
-      background-color: #ddd;
-      color: #111;
+      background-color: $accent;
+      color: $white;
       font-size: 3rem;
-      border: 1px solid #111;
       border-radius: 3px;
+      border: none;
       padding: 1rem 1.5rem;
       text-transform: uppercase;
       margin-top: 3rem;
       align-self: center;
-      transition: all 0.2s ease-out;
+      transition: all 0.4s ease;
 
       &:hover {
-        background-color: $black;
-        color: #222;
+        background-color: $lightaccent;
+        color: #fff;
+        transform: translateY(-.5rem);
+        box-shadow: 0 .5rem .5rem $black;
         cursor: pointer;
       }
     }
