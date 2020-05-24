@@ -2,6 +2,7 @@
   padding: 0 10%;
   display: flex;
   flex-direction: column;
+  margin-top: 22rem;
 
   &-main {
     display: flex;
@@ -9,15 +10,33 @@
     height: 70vh;
   }
 
+  &-divisor {
+    opacity: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+    clip-path: polygon(40% 0%, 88% 0%, 52.5% 100%, 2.5% 100%);
+
+    // animation: fadeIn 1s ease 0.75s;
+    // animation-fill-mode: backwards;
+
+    &::before,
+    &::after {
+      clear: both;
+      display: none;
+    }
+  }
+
   &-cta {
     display: flex;
     flex-direction: column;
     font-size: 3rem;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     margin-bottom: 3rem;
     padding-left: 1rem;
-    width: 40%;
+    width: 35%;
 
     &_text {
       width: 90%;
@@ -38,19 +57,34 @@
       animation: moveInBottom 1s ease 0.75s;
       animation-fill-mode: backwards;
 
+      transition: all .4s ease;
+
       &,
       &:link,
       &:visited {
         text-decoration: none;
         color: $white;
       }
+
+      &:hover {
+        background-color: $lightaccent;
+        color: #fff;
+        transform: translateY(-.5rem);
+        box-shadow: 0 .5rem .5rem $black;
+      }
+
+      &::before,
+      &::after {
+        clear: both;
+        display: none;
+      }
     }
   }
 
-  &-image {
-    width: 60%;
-    height: 666px;
-    background-image: url("../images/woodwork.jpg");
+  &-image1 {
+    width: 55%;
+    height: 100%;
+
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     background-position: center;
     object-fit: cover;
@@ -59,42 +93,52 @@
     animation-fill-mode: backwards;
   }
 
+  &-image2 {
+    width: 55%;
+    height: 100%;
+
+    clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
+    background-position: left;
+    object-fit: cover;
+
+    animation: fadeIn 1s ease 0.75s;
+    animation-fill-mode: backwards;
+  }
+
   &-skills {
-      
+    display: flex;
+    justify-content: space-around;
+    height: 45vh;
+    width: 100%;
+    margin-top: 15rem;
+
+    &-each {
+      background-color: #d2d2d2;
       display: flex;
-      justify-content: space-around;
-      height: 45vh;
-      width: 100%;
-      margin-top: 15rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 2.4rem;
+      min-height: 50%;
+      max-height: 50%s;
+      width: 25%;
+      margin: 5rem;
+      padding: 5rem 1.5rem;
 
-      &-each {
-          background-color: #d2d2d2;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: flex-start;
-          font-size: 2.4rem;
-          min-height: 50%;
-          max-height: 50%s;
-          width: 25%;
-          margin: 5rem;
-          padding: 5rem 1.5rem;
-
-          &_icon {
-            color: $accent;
-          }
-
-          &-text {
-
-            &_title {
-                text-align: center;
-                margin: 3rem 0;
-            }
-
-            &_paragraph {
-                text-align: center;
-            }
-          }
+      &_icon {
+        color: $accent;
       }
+
+      &-text {
+        &_title {
+          text-align: center;
+          margin: 3rem 0;
+        }
+
+        &_paragraph {
+          text-align: center;
+        }
+      }
+    }
   }
 }

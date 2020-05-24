@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Faq from "./components/FAQ";
+import Reviews from "./components/Reviews";
 
 export default class App extends Component {
   render() {
@@ -18,6 +19,9 @@ export default class App extends Component {
           <div className="navigation-links">
             <Link to="/projects" className="navigation-links_projects">
               Projects
+            </Link>
+            <Link to="/reviews" className="navigation-links_reviews">
+              Reviews
             </Link>
             <Link to="/about" className="navigation-links_about">
               About
@@ -37,6 +41,7 @@ export default class App extends Component {
             <Route exact path="/about" render={(props) => <About {...props} />} />
             <Route exact path="/contact" render={(props) => <Contact {...props} />} />
             <Route exact path="/Faq" render={(props) => <Faq {...props} />} />
+            <Route exact path="/reviews" render={(props) => <Reviews {...props} />} />
           </Switch>
         </main>
       </Fragment>

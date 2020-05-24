@@ -3,9 +3,9 @@
   "name": "TheRusticDude",
   "icons": [
     {
-      "src": "./images/theRusticDudeLogoImage.png",
+      "src": "./images/therusticdudelogowhite.png",
       "type": "image/png",
-      "sizes": "200x200"
+      "sizes": "308x281"
     }
   ],
   "start_url": ".",

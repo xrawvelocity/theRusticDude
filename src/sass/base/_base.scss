@@ -55,13 +55,13 @@ a:active {
 }
 
 ::-moz-selection {
-  background-color: #fff;
-  color: #e78200;
+  background-color: $accent;
+  color: $white;
 }
 
 ::selection {
-  background-color: #fff;
-  color: #e78200;
+  background-color: $accent;
+  color: $white;
 }
 
 body::-webkit-scrollbar-track {
@@ -72,7 +72,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar {
-  width: 7px;
+  width: 12px;
   background-color: #000;
 }
 

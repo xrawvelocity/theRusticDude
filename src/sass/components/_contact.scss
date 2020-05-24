@@ -1,0 +1,230 @@
+.home-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-out 0.5s;
+  animation-fill-mode: backwards;
+
+  &-title {
+      font-size: 3rem;
+      margin-top: 10rem;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $black;
+    margin: 2rem 0 0;
+    width: 50%;
+    text-align: center;
+
+    @include respond(phone) {
+      margin: 4rem 0 0;
+      width: 80%;
+    }
+
+    &__title {
+      font-size: 4rem;
+    }
+
+    &__paragraph {
+      font-size: 3rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &-links {
+    width: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: -10rem;
+
+    @include respond(phone) {
+      width: 55rem;
+    }
+
+    // &__linkedin {
+    //   &,
+    //   &:link,
+    //   &:visited {
+    //     width: 50px;
+    //     height: 50px;
+    //     background-image: url("../images/logos/linkedinlogo.png");
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     transition: all 0.1s ease-in-out;
+
+    //     @include respond(phone) {
+    //       width: 35px;
+    //       height: 35px;
+    //     }
+    //   }
+    //   &:hover {
+    //     transform: scale(1.1);
+    //     cursor: pointer;
+    //   }
+    //   &::after {
+    //     content: "";
+    //     display: table;
+    //     clear: both;
+    //   }
+    // }
+
+    // &__resume {
+    //   &,
+    //   &:link,
+    //   &:visited {
+    //     background-color: #ddd;
+    //     color: #111;
+    //     font-size: 2.2rem;
+    //     border: 1px solid #111;
+    //     text-decoration: none;
+    //     border-radius: 3px;
+    //     padding: 1rem 1.5rem;
+    //     text-transform: uppercase;
+    //     margin: 5rem 0;
+    //     align-self: flex-end;
+    //     transition: all 0.2s ease-out;
+    //   }
+
+    //   &:hover {
+    //     background-color: $black;
+    //     color: #222;
+    //     cursor: pointer;
+    //   }
+    // }
+
+    // &__github {
+    //   &,
+    //   &:link,
+    //   &:visited {
+    //     width: 55px;
+    //     height: 55px;
+    //     background-image: url("../images/logos/githublogo.png");
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     background-position: center;
+    //     transition: all 0.1s ease-in-out;
+
+    //     @include respond(phone) {
+    //       width: 35px;
+    //       height: 35px;
+    //     }
+    //   }
+    //   &:hover {
+    //     transform: scale(1.1);
+    //     cursor: pointer;
+    //   }
+
+    //   &::after {
+    //     content: "";
+    //     display: table;
+    //     clear: both;
+    //   }
+    // }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 12rem auto;
+    font-size: 2.6rem;
+
+    @include respond(phone) {
+      flex-direction: column;
+      margin: 15rem 0 0;
+      padding-bottom: 15rem;
+    }
+
+    &-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-bottom: 5rem;
+
+      &::after {
+        content: "";
+        position: relative;
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: $black;
+        transform: scaleX(0);
+        transform-origin: 0%;
+        transition: transform 0.3s ease;
+        top: 0;
+      }
+
+      &:focus-within {
+        border-color: transparent;
+
+        &::after {
+          transform: scaleX(1);
+        }
+
+        & .home-contact-form-group__label {
+          transform: translateY(-3.5rem);
+        }
+      }
+
+      &__input:not(:placeholder-shown) + &__label {
+        transform: translateY(-3.5rem);
+      }
+
+      &__label {
+        // z-index: -1;
+        margin: 3rem 0 1rem;
+        align-self: start;
+        color: $black;
+        position: absolute;
+        bottom: 0rem;
+        font-size: 2rem;
+        transition: transform 0.5s ease;
+
+        &:hover {
+          cursor: text;
+        }
+      }
+
+      &__input {
+        background-color: transparent;
+        color: $black;
+        border: none;
+        border-bottom: 2px dashed #666;
+        padding: 0.5rem 0rem;
+        font-size: 3rem;
+
+        &:hover {
+          cursor: text;
+        }
+      }
+    }
+
+    &-button {
+      background-color: #ddd;
+      color: #111;
+      font-size: 3rem;
+      border: 1px solid #111;
+      border-radius: 3px;
+      padding: 1rem 1.5rem;
+      text-transform: uppercase;
+      margin-top: 3rem;
+      align-self: center;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        background-color: $black;
+        color: #222;
+        cursor: pointer;
+      }
+    }
+  }
+}
