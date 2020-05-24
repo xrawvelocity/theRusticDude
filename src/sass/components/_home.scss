@@ -91,7 +91,7 @@
     background-position: center;
     object-fit: cover;
 
-    animation: fadeIn 1s ease 0.75s;
+    animation: moveInRight 1s ease 0.75s;
     animation-fill-mode: backwards;
   }
 
@@ -103,7 +103,7 @@
     background-position: left;
     object-fit: cover;
 
-    animation: fadeIn 1s ease 0.75s;
+    animation: moveInLeft 1s ease 0.75s;
     animation-fill-mode: backwards;
   }
 

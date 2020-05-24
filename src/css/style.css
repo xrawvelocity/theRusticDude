@@ -209,7 +209,7 @@ body::-webkit-scrollbar-thumb {
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
     background-position: center;
     object-fit: cover;
-    animation: fadeIn 1s ease 0.75s;
+    animation: moveInRight 1s ease 0.75s;
     animation-fill-mode: backwards; }
   .home-image2 {
     width: 55%;
@@ -217,7 +217,7 @@ body::-webkit-scrollbar-thumb {
     clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
     background-position: left;
     object-fit: cover;
-    animation: fadeIn 1s ease 0.75s;
+    animation: moveInLeft 1s ease 0.75s;
     animation-fill-mode: backwards; }
   .home-skills {
     display: flex;
@@ -250,7 +250,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.5s ease-out 0.5s;
+  animation: fadeIn 1s ease 0.75s;
   animation-fill-mode: backwards; }
   .home-contact-title {
     font-size: 3rem;
