@@ -1,4 +1,42 @@
 @import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap);
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-15rem); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 * {
   padding: 0;
   margin: 0;
@@ -60,13 +98,15 @@ body::-webkit-scrollbar-thumb {
   border-radius: 2px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #ccc; }
+  background-color: #e78200; }
 
 .navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10% 0 5%; }
+  padding: 0 10% 0 5%;
+  animation: moveInTop 1s ease .5s;
+  animation-fill-mode: backwards; }
   .navigation-logo {
     display: flex;
     justify-content: center;
@@ -103,10 +143,13 @@ body::-webkit-scrollbar-thumb {
         cursor: pointer; }
 
 .home {
+  padding: 0 10%;
   display: flex;
-  justify-content: space-around;
-  height: 70vh;
-  padding: 0 10%; }
+  flex-direction: column; }
+  .home-main {
+    display: flex;
+    justify-content: space-around;
+    height: 70vh; }
   .home-cta {
     display: flex;
     flex-direction: column;
@@ -118,19 +161,52 @@ body::-webkit-scrollbar-thumb {
     width: 40%; }
     .home-cta_text {
       width: 90%;
-      color: #131312; }
+      color: #131312;
+      animation: moveInBottom 1s ease 0.5s;
+      animation-fill-mode: backwards; }
     .home-cta_button {
       margin: 5rem 0;
       background-color: #e78200;
-      color: #131312;
       padding: 1rem 1.5rem;
       border-radius: 3px;
-      font-size: 2.2rem; }
+      font-size: 2.2rem;
+      font-weight: 500;
+      animation: moveInBottom 1s ease 0.75s;
+      animation-fill-mode: backwards; }
       .home-cta_button, .home-cta_button:link, .home-cta_button:visited {
         text-decoration: none;
-        color: #131312; }
+        color: #f7f7f1; }
   .home-image {
     width: 60%;
+    height: 666px;
     background-image: url("../images/woodwork.jpg");
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    object-fit: cover; }
+    background-position: center;
+    object-fit: cover;
+    animation: fadeIn 1s ease 0.75s;
+    animation-fill-mode: backwards; }
+  .home-skills {
+    display: flex;
+    justify-content: space-around;
+    height: 45vh;
+    width: 100%;
+    margin-top: 15rem; }
+    .home-skills-each {
+      background-color: #d2d2d2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 2.4rem;
+      min-height: 50%;
+      max-height: 50%s;
+      width: 25%;
+      margin: 5rem;
+      padding: 5rem 1.5rem; }
+      .home-skills-each_icon {
+        color: #e78200; }
+      .home-skills-each-text_title {
+        text-align: center;
+        margin: 3rem 0; }
+      .home-skills-each-text_paragraph {
+        text-align: center; }

@@ -1,8 +1,13 @@
 .home {
-  display: flex;
-  justify-content: space-around;
-  height: 70vh;
   padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+
+  &-main {
+    display: flex;
+    justify-content: space-around;
+    height: 70vh;
+  }
 
   &-cta {
     display: flex;
@@ -17,28 +22,79 @@
     &_text {
       width: 90%;
       color: $black;
+
+      animation: moveInBottom 1s ease 0.5s;
+      animation-fill-mode: backwards;
     }
 
     &_button {
       margin: 5rem 0;
       background-color: $accent;
-      color: $black;
       padding: 1rem 1.5rem;
       border-radius: 3px;
       font-size: 2.2rem;
+      font-weight: 500;
+
+      animation: moveInBottom 1s ease 0.75s;
+      animation-fill-mode: backwards;
+
       &,
       &:link,
       &:visited {
         text-decoration: none;
-        color: $black;
+        color: $white;
       }
     }
   }
 
   &-image {
     width: 60%;
+    height: 666px;
     background-image: url("../images/woodwork.jpg");
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-position: center;
     object-fit: cover;
+
+    animation: fadeIn 1s ease 0.75s;
+    animation-fill-mode: backwards;
+  }
+
+  &-skills {
+      
+      display: flex;
+      justify-content: space-around;
+      height: 45vh;
+      width: 100%;
+      margin-top: 15rem;
+
+      &-each {
+          background-color: #d2d2d2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 2.4rem;
+          min-height: 50%;
+          max-height: 50%s;
+          width: 25%;
+          margin: 5rem;
+          padding: 5rem 1.5rem;
+
+          &_icon {
+            color: $accent;
+          }
+
+          &-text {
+
+            &_title {
+                text-align: center;
+                margin: 3rem 0;
+            }
+
+            &_paragraph {
+                text-align: center;
+            }
+          }
+      }
   }
 }

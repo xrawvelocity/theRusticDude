@@ -5,6 +5,9 @@
     align-items: center;
     padding: 0 10% 0 5%;
 
+    animation: moveInTop 1s ease .5s;
+    animation-fill-mode: backwards;
+
     &-logo {
         
         display: flex;
