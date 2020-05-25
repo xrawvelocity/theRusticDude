@@ -117,9 +117,12 @@ body::-webkit-scrollbar-thumb {
   z-index: 10000000;
   background-color: rgba(247, 247, 241, 0.9);
   animation: moveInTop 1s ease 0.5s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  overflow-x: hidden; }
   @media only screen and (max-width: 560px) {
     .navigation {
+      position: fixed;
+      top: 0;
       padding: 1% 0; } }
   .navigation-logo {
     display: flex;
@@ -132,15 +135,23 @@ body::-webkit-scrollbar-thumb {
       .navigation-logo {
         height: 100px;
         width: 300px; } }
+    @media only screen and (max-width: 560px) {
+      .navigation-logo {
+        height: 100px;
+        width: 250px; } }
     @media only screen and (max-width: 400px) {
       .navigation-logo {
         height: 100px;
-        width: 225px; } }
+        width: 225px;
+        padding-left: 2rem; } }
     .navigation-logo_image {
       transform: scale(0.5); }
       @media only screen and (max-width: 560px) {
         .navigation-logo_image {
-          transform: scale(0.4); } }
+          transform: scale(0.3); } }
+      @media only screen and (max-width: 400px) {
+        .navigation-logo_image {
+          transform: scale(1); } }
     .navigation-logo_text {
       height: 100px;
       transform: scale(1);
@@ -149,10 +160,14 @@ body::-webkit-scrollbar-thumb {
         .navigation-logo_text {
           transform: scale(0.75);
           margin-left: -10rem; } }
+      @media only screen and (max-width: 560px) {
+        .navigation-logo_text {
+          transform: scale(0.7);
+          margin-left: -15rem; } }
       @media only screen and (max-width: 400px) {
         .navigation-logo_text {
           transform: scale(0.6);
-          padding-left: 2rem; } }
+          padding-left: 10rem; } }
   .navigation-links {
     display: flex; }
     @media only screen and (max-width: 65em) {
@@ -189,7 +204,7 @@ body::-webkit-scrollbar-thumb {
         padding: 1rem 2rem;
         position: fixed;
         top: 80px;
-        right: 25px;
+        right: 10px;
         overflow: hidden;
         animation: fadeIn 0.5s ease;
         animation-fill-mode: both; } }
@@ -222,7 +237,7 @@ body::-webkit-scrollbar-thumb {
       padding: 1rem 2rem;
       position: fixed;
       top: 80px;
-      right: 25px;
+      right: 10px;
       overflow: hidden;
       animation: fadeOut 0.5s ease;
       animation-fill-mode: both; }
@@ -257,7 +272,7 @@ body::-webkit-scrollbar-thumb {
       flex-direction: column;
       position: fixed;
       top: 30px;
-      right: 50px;
+      right: 30px;
       width: 30px;
       height: 50px;
       transition: all 0.3s ease; }
@@ -278,7 +293,7 @@ body::-webkit-scrollbar-thumb {
       .hamburger-two {
         opacity: 1;
         width: 80%;
-        align-self: end; }
+        align-self: flex-end; }
         .hamburger-two_open {
           opacity: 0; }
       .hamburger-three {
@@ -293,7 +308,7 @@ body::-webkit-scrollbar-thumb {
       flex-direction: column;
       position: fixed;
       top: 30px;
-      right: 50px;
+      right: 30px;
       width: 30px;
       height: 50px;
       transition: all 0.3s ease; }
@@ -312,6 +327,9 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     justify-content: space-around;
     height: 70vh; }
+    @media only screen and (max-width: 560px) {
+      .home-main {
+        font-weight: 800; } }
   .home-divisor {
     opacity: 0;
     width: 100%;
@@ -342,6 +360,9 @@ body::-webkit-scrollbar-thumb {
       color: #131312;
       animation: moveInBottom 1s ease 0.5s;
       animation-fill-mode: backwards; }
+      @media only screen and (max-width: 560px) {
+        .home-cta_text {
+          color: #f7f7f1; } }
     .home-cta_button {
       margin: 5rem 0;
       background-color: #e78200;
@@ -352,7 +373,7 @@ body::-webkit-scrollbar-thumb {
       border: none;
       animation: moveInBottom 1s ease 0.75s;
       animation-fill-mode: backwards;
-      transition: all .4s ease; }
+      transition: all 0.4s ease; }
       .home-cta_button, .home-cta_button:link, .home-cta_button:visited {
         text-decoration: none;
         color: #f7f7f1; }
@@ -375,8 +396,9 @@ body::-webkit-scrollbar-thumb {
     animation-fill-mode: backwards; }
     @media only screen and (max-width: 560px) {
       .home-image1 {
+        clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
         width: 100%;
-        opacity: 0.4; } }
+        filter: brightness(0.5); } }
   .home-image2 {
     width: 55%;
     height: 100%;
@@ -387,33 +409,9 @@ body::-webkit-scrollbar-thumb {
     animation-fill-mode: backwards; }
     @media only screen and (max-width: 560px) {
       .home-image2 {
+        clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
         width: 100%;
-        opacity: 0.4; } }
-  .home-skills {
-    display: flex;
-    justify-content: space-around;
-    height: 45vh;
-    width: 100%;
-    margin-top: 15rem; }
-    .home-skills-each {
-      background-color: #d2d2d2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: 2.4rem;
-      min-height: 50%;
-      max-height: 50%s;
-      width: 25%;
-      margin: 5rem;
-      padding: 5rem 1.5rem; }
-      .home-skills-each_icon {
-        color: #e78200; }
-      .home-skills-each-text_title {
-        text-align: center;
-        margin: 3rem 0; }
-      .home-skills-each-text_paragraph {
-        text-align: center; }
+        filter: brightness(0.5); } }
 
 .home-contact {
   display: flex;
@@ -500,6 +498,9 @@ body::-webkit-scrollbar-thumb {
         transition: transform 0.5s ease; }
         .home-contact-form-group__label:hover {
           cursor: text; }
+        @media only screen and (max-width: 560px) {
+          .home-contact-form-group__label {
+            bottom: 1rem; } }
       .home-contact-form-group__input {
         background-color: transparent;
         color: #131312;

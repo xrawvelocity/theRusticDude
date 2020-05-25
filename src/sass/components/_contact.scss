@@ -194,6 +194,10 @@
         &:hover {
           cursor: text;
         }
+
+        @include respond (phone) {
+            bottom: 1rem;
+        }
       }
 
       &__input {

@@ -9,7 +9,9 @@
     justify-content: space-around;
     height: 70vh;
 
-    
+    @include respond(phone) {
+      font-weight: 800;
+    }
   }
 
   &-divisor {
@@ -40,8 +42,8 @@
     padding-left: 1rem;
     width: 35%;
 
-    @include respond (phone) {
-      position: absolute; 
+    @include respond(phone) {
+      position: absolute;
       z-index: 1000;
       width: 60%;
       margin-top: 30rem;
@@ -54,7 +56,9 @@
       animation: moveInBottom 1s ease 0.5s;
       animation-fill-mode: backwards;
 
-      
+      @include respond(phone) {
+        color: $white;
+      }
     }
 
     &_button {
@@ -69,7 +73,7 @@
       animation: moveInBottom 1s ease 0.75s;
       animation-fill-mode: backwards;
 
-      transition: all .4s ease;
+      transition: all 0.4s ease;
 
       &,
       &:link,
@@ -81,8 +85,8 @@
       &:hover {
         background-color: $lightaccent;
         color: #fff;
-        transform: translateY(-.5rem);
-        box-shadow: 0 .5rem .5rem $black;
+        transform: translateY(-0.5rem);
+        box-shadow: 0 0.5rem 0.5rem $black;
         cursor: pointer;
       }
 
@@ -105,9 +109,10 @@
     animation: moveInRight 1s ease 0.75s;
     animation-fill-mode: backwards;
 
-    @include respond (phone) {
+    @include respond(phone) {
+      clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
       width: 100%;
-      opacity: 0.4;
+      filter: brightness(0.5);
     }
   }
 
@@ -122,46 +127,10 @@
     animation: moveInLeft 1s ease 0.75s;
     animation-fill-mode: backwards;
 
-    @include respond (phone) {
+    @include respond(phone) {
+      clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
       width: 100%;
-      opacity: 0.4;
-    }
-  }
-
-  &-skills {
-    display: flex;
-    justify-content: space-around;
-    height: 45vh;
-    width: 100%;
-    margin-top: 15rem;
-
-    &-each {
-      background-color: #d2d2d2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      font-size: 2.4rem;
-      min-height: 50%;
-      max-height: 50%s;
-      width: 25%;
-      margin: 5rem;
-      padding: 5rem 1.5rem;
-
-      &_icon {
-        color: $accent;
-      }
-
-      &-text {
-        &_title {
-          text-align: center;
-          margin: 3rem 0;
-        }
-
-        &_paragraph {
-          text-align: center;
-        }
-      }
+      filter: brightness(0.5);
     }
   }
 }
