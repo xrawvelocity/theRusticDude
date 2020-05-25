@@ -1,54 +1,91 @@
 .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 10% 1% 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba($white, 0.9);
 
+  animation: moveInTop 1s ease 0.5s;
+  animation-fill-mode: backwards;
+
+  &-logo {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 0 10% 0 5%;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba($white, 0.9);
+    height: 100px;
+    width: 400px;
+    object-fit: cover;
 
-    animation: moveInTop 1s ease .5s;
-    animation-fill-mode: backwards;
+    &_image {
+      transform: scale(0.5);
+    }
 
-    &-logo {
+    &_text {
+      height: 100px;
+      transform: scale(1);
+      margin-left: -5rem;
+    }
+  }
+
+  &-links {
+    display: flex;
+
+    @include respond(tab-port) {
+      //width < 1040px
+      display: none;
+    }
+
+    & > * {
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: #131312;
+        font-family: "Ubuntu";
+        margin-left: 3rem;
+        font-size: 2.4rem;
+
+        @include animBorder(500ms);
+      }
+    }
+  }
+
+  &-hamburger {
+    display: none;
+
+    @include respond(tab-port) {
+      //width < 1040px
+      display: flex;
+      flex-direction: column;
+      background-color: #222;
+      padding: 1rem 2rem;
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      overflow: hidden;
+      animation: showDown 2s ease 1s;
+      animation-fill-mode: backwards;
+    }
+
+    & > * {
+      &,
+      &:link,
+      &:visited {
+        text-decoration: none;
+        color: $white;
+        font-family: "Ubuntu";
+        font-size: 2.4rem;
         
-        display: flex;
-        justify-content: center;
-        height: 200px;
-        width: 400px;
-        object-fit: cover;
-
-        &_image {
-            transform: scale(.5);
-            
+        &:not(:last-child){
+            margin-bottom: 2rem;
         }
 
-        &_text {
-            transform: scale(1);
-            margin-left: -5rem;
-        }
+        @include animBorder(500ms);
+      }
     }
-
-    &-links {
-
-        display: flex;
-
-        & > * {
-            &,
-            &:link,
-            &:visited {
-                text-decoration: none;
-                color: #131312;
-                font-family: "Ubuntu";
-                margin-left: 3rem;
-                font-size: 2.4rem;
-
-                @include animBorder(500ms);
-            }
-        }
-
-    }
+  }
 }

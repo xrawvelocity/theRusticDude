@@ -33,6 +33,23 @@ export default class App extends Component {
               FAQ
             </Link>
           </div>
+          <div className="navigation-hamburger">
+            <Link to="/projects" className="navigation-hamburger_projects">
+              Projects
+            </Link>
+            <Link to="/reviews" className="navigation-hamburger_reviews">
+              Reviews
+            </Link>
+            <Link to="/about" className="navigation-hamburger_about">
+              About
+            </Link>
+            <Link to="/contact" className="navigation-hamburger_contact">
+              Contact
+            </Link>
+            <Link to="/FAQ" className="navigation-hamburger_FAQ">
+              FAQ
+            </Link>
+          </div>
         </nav>
         <main>
           <Switch>

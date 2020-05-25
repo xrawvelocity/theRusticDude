@@ -48,3 +48,12 @@
     opacity: 1;
   }
 }
+
+@keyframes showDown {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 210px;
+    }
+}
