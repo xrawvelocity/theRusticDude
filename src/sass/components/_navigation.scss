@@ -6,11 +6,15 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 10000000;
   background-color: rgba($white, 0.9);
 
   animation: moveInTop 1s ease 0.5s;
   animation-fill-mode: backwards;
+
+  @include respond(phone) {
+    padding: 1% 0;
+  }
 
   &-logo {
     display: flex;
@@ -20,14 +24,36 @@
     width: 400px;
     object-fit: cover;
 
+    @include respond(tab-port) {
+      height: 100px;
+      width: 300px;
+    }
+    @include respond(smallphone) {
+      height: 100px;
+      width: 225px;
+    }
+
     &_image {
       transform: scale(0.5);
+      @include respond(phone) {
+        transform: scale(.4);
+      }
     }
 
     &_text {
       height: 100px;
       transform: scale(1);
       margin-left: -5rem;
+
+      @include respond(tab-port) {
+        transform: scale(0.75);
+        margin-left: -10rem;
+      }
+
+      @include respond(smallphone) {
+        transform: scale(0.6);
+        padding-left: 2rem;
+      }
     }
   }
 
@@ -57,34 +83,148 @@
   &-hamburger {
     display: none;
 
-    @include respond(tab-port) {
-      //width < 1040px
+    &_active {
+      @include respond(tab-port) {
+        //width < 1040px
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        padding: 1rem 2rem;
+        position: fixed;
+        top: 80px;
+        right: 25px;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease;
+        animation-fill-mode: both;
+      }
+
+      & > * {
+        &,
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: $white;
+          font-family: "Ubuntu";
+          font-size: 2.4rem;
+
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          @include animBorder(500ms);
+        }
+      }
+    }
+
+    &_close {
       display: flex;
       flex-direction: column;
       background-color: #222;
       padding: 1rem 2rem;
       position: fixed;
-      top: 100px;
-      right: 20px;
+      top: 80px;
+      right: 25px;
       overflow: hidden;
-      animation: showDown 2s ease 1s;
-      animation-fill-mode: backwards;
+      animation: fadeOut 0.5s ease;
+      animation-fill-mode: both;
+
+      & > * {
+        &,
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: $white;
+          font-family: "Ubuntu";
+          font-size: 2.4rem;
+
+          &:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          @include animBorder(500ms);
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 30px;
+    right: 50px;
+    width: 30px;
+    height: 50px;
+    transition: all 0.3s ease;
+
+    &::before,
+    &::after {
+      clear: both;
+      content: "";
+    }
+
+    &:hover {
+      cursor: pointer;
     }
 
     & > * {
-      &,
-      &:link,
-      &:visited {
-        text-decoration: none;
-        color: $white;
-        font-family: "Ubuntu";
-        font-size: 2.4rem;
-        
-        &:not(:last-child){
-            margin-bottom: 2rem;
-        }
+      border-bottom: 4px solid $black;
+      margin-top: 1.5rem;
+    }
 
-        @include animBorder(500ms);
+    &-one {
+      transform: rotate(0);
+      transition: all 0.3s ease;
+
+      &_open {
+        transition: all 0.3s ease;
+        transform: rotate(45deg) translateY(1.5rem) translateX(1rem);
+      }
+    }
+
+    &-two {
+      opacity: 1;
+      width: 80%;
+      align-self: end;
+
+      &_open {
+        opacity: 0;
+      }
+    }
+
+    &-three {
+      transform: rotate(0);
+      transition: all 0.3s ease;
+
+      &_open {
+        transition: all 0.3s ease;
+        transform: rotate(-45deg) translateY(-2rem) translateX(1.5rem);
+      }
+    }
+  }
+
+  &_open {
+    @include respond(tab-port) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 30px;
+      right: 50px;
+      width: 30px;
+      height: 50px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      & > * {
+        border-bottom: 4px solid $black;
+        margin-top: 1.5rem;
       }
     }
   }

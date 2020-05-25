@@ -8,6 +8,8 @@
     display: flex;
     justify-content: space-around;
     height: 70vh;
+
+    
   }
 
   &-divisor {
@@ -38,12 +40,21 @@
     padding-left: 1rem;
     width: 35%;
 
+    @include respond (phone) {
+      position: absolute; 
+      z-index: 1000;
+      width: 60%;
+      margin-top: 30rem;
+    }
+
     &_text {
       width: 90%;
       color: $black;
 
       animation: moveInBottom 1s ease 0.5s;
       animation-fill-mode: backwards;
+
+      
     }
 
     &_button {
@@ -93,6 +104,11 @@
 
     animation: moveInRight 1s ease 0.75s;
     animation-fill-mode: backwards;
+
+    @include respond (phone) {
+      width: 100%;
+      opacity: 0.4;
+    }
   }
 
   &-image2 {
@@ -105,6 +121,11 @@
 
     animation: moveInLeft 1s ease 0.75s;
     animation-fill-mode: backwards;
+
+    @include respond (phone) {
+      width: 100%;
+      opacity: 0.4;
+    }
   }
 
   &-skills {
