@@ -93,6 +93,20 @@
         @include animBorder(500ms);
       }
     }
+
+    &_active {
+      &::after {
+        content: "";
+        position: relative;
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: $black;
+        transform: scaleX(1) !important;
+        transform-origin: 0%;
+        top: 2px;
+      }
+    }
   }
 
   &-hamburger {
@@ -132,31 +146,33 @@
     }
 
     &_close {
-      display: flex;
-      flex-direction: column;
-      background-color: #222;
-      padding: 1rem 2rem;
-      position: fixed;
-      top: 80px;
-      right: 10px;
-      overflow: hidden;
-      animation: fadeOut 0.5s ease;
-      animation-fill-mode: both;
+      @include respond(tab-port) {
+        display: flex;
+        flex-direction: column;
+        background-color: #222;
+        padding: 1rem 2rem;
+        position: fixed;
+        top: 80px;
+        right: 10px;
+        overflow: hidden;
+        animation: fadeOut 0.5s ease;
+        animation-fill-mode: both;
 
-      & > * {
-        &,
-        &:link,
-        &:visited {
-          text-decoration: none;
-          color: $white;
-          font-family: "Ubuntu";
-          font-size: 2.4rem;
+        & > * {
+          &,
+          &:link,
+          &:visited {
+            text-decoration: none;
+            color: $white;
+            font-family: "Ubuntu";
+            font-size: 2.4rem;
 
-          &:not(:last-child) {
-            margin-bottom: 2rem;
+            &:not(:last-child) {
+              margin-bottom: 2rem;
+            }
+
+            @include animBorder(500ms);
           }
-
-          @include animBorder(500ms);
         }
       }
     }

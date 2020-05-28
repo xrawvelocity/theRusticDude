@@ -8,20 +8,26 @@ export default class Projects extends Component {
       {
         title: "Gray tint chair",
         customer: "Jorge A.",
-        review: 5,
+        rating: 5,
+        review: "Very nice woodwork",
         image: "../images/woodwork.jpg",
         date: new Date().toDateString(),
       },
       {
         title: "Blue tint table",
         customer: "Jorge B.",
-        review: 4,
+        rating: 4,
+        review: "Very nice woodwork indeed",
         image: "../images/ManuelImage.jpg",
         date: new Date().toDateString(),
       },
     ],
     popup: "",
   };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   loadProjects = () => {
     return this.state.projects.map((project) => {
@@ -38,11 +44,14 @@ export default class Projects extends Component {
             className="projects-card_image"
           />
           <h6 className="projects-card_title">{project.title}</h6>
-          <div className="projects-card-customer">
-            <p className="projects-card-customer_name">{project.customer}</p>
-            <p className="projects-card-customer_review">
-              Rating: {project.review}/5
-            </p>
+          <div className="projects-card-content">
+            <div className="projects-card-customer">
+              <p className="projects-card-customer_name">{project.customer}</p>
+              <p className="projects-card-customer_rating">
+                Rating: {project.rating}/5
+              </p>
+            </div>
+            <p className="projects-card_review">"{project.review}"</p>
           </div>
           <p className="projects-card_date">{project.date}</p>
         </div>

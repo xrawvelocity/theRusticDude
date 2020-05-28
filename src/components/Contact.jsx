@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 
 export default class Contact extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+  
   render() {
     return (
-      <section style={{marginTop: "20rem"}} className="home-contact">
+      <section style={{ marginTop: "20rem" }} className="home-contact">
         <h4 className="home-contact-title">
           So what will it be? A chair, a table, or something else?
         </h4>

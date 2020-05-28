@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 export default class Home extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className="home">
@@ -41,14 +43,13 @@ export default class Home extends Component {
           </div>
         </section>
         <div className="home-divisor"></div>
-        <section className="home-main">
+        <section className="home-main home-main-last">
           <div className="home-cta">
             <div className="home-cta_text">
-              But why take that from me? Hear what my latest clients have to say
-              about my service
+              Have any questions? Check out the Frequently Asked Questions section
             </div>
-            <Link to="/reviews" className="home-cta_button">
-              See the latest reviews
+            <Link to="/FAQ" className="home-cta_button">
+              Frequently Asked Questions
             </Link>
           </div>
           <img

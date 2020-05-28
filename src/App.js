@@ -5,21 +5,25 @@ import Projects from "./components/Projects";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Faq from "./components/FAQ";
-import Reviews from "./components/Reviews";
 
 export default class App extends Component {
   state = {
     active: false,
     close: false,
+    selected: "",
   };
 
   render() {
     return (
       <Fragment>
         <nav className="navigation">
-          <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/" className="navigation-logo">
+          <Link
+            onClick={() => {
+              this.setState({ active: false, close: true, selected: "" });
+            }}
+            to="/"
+            className="navigation-logo"
+          >
             <img
               className="navigation-logo_image"
               src="./images/theRusticDudeLogoImage.png"
@@ -32,19 +36,60 @@ export default class App extends Component {
             />
           </Link>
           <div className="navigation-links">
-            <Link to="/projects" className="navigation-links_projects">
+            <Link
+              onClick={() => {
+                this.setState({ selected: "projects" });
+              }}
+              to="/projects"
+              className={`navigation-links_projects ${
+                this.state.selected === "projects" ||
+                window.location.href.includes("projects")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
               Projects
             </Link>
-            <Link to="/reviews" className="navigation-links_reviews">
-              Reviews
-            </Link>
-            <Link to="/about" className="navigation-links_about">
+            <Link
+              onClick={() => {
+                this.setState({ selected: "about" });
+              }}
+              to="/about"
+              className={`navigation-links_about ${
+                this.state.selected === "about" ||
+                window.location.href.includes("about")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
               About
             </Link>
-            <Link to="/contact" className="navigation-links_contact">
+            <Link
+              onClick={() => {
+                this.setState({ selected: "contact" });
+              }}
+              to="/contact"
+              className={`navigation-links_contact ${
+                this.state.selected === "contact" ||
+                window.location.href.includes("contact")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
               Contact
             </Link>
-            <Link to="/FAQ" className="navigation-links_FAQ">
+            <Link
+              onClick={() => {
+                this.setState({ selected: "FAQ" });
+              }}
+              to="/FAQ"
+              className={`navigation-links_FAQ ${
+                this.state.selected === "FAQ" ||
+                window.location.href.includes("FAQ")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
               FAQ
             </Link>
           </div>
@@ -55,11 +100,23 @@ export default class App extends Component {
                 close: this.state.active ? true : false,
               });
             }}
-            className={!this.state.active ? "hamburger": "hamburger_open"}
+            className={!this.state.active ? "hamburger" : "hamburger_open"}
           >
-            <span className={!this.state.active ? "hamburger-one": "hamburger-one_open"}></span>
-            <span className={!this.state.active ? "hamburger-two": "hamburger-two_open"}></span>
-            <span className={!this.state.active ? "hamburger-three": "hamburger-three_open"}></span>
+            <span
+              className={
+                !this.state.active ? "hamburger-one" : "hamburger-one_open"
+              }
+            ></span>
+            <span
+              className={
+                !this.state.active ? "hamburger-two" : "hamburger-two_open"
+              }
+            ></span>
+            <span
+              className={
+                !this.state.active ? "hamburger-three" : "hamburger-three_open"
+              }
+            ></span>
           </div>
           <div
             className={
@@ -70,29 +127,40 @@ export default class App extends Component {
                 : "navigation-hamburger_active"
             }
           >
-            <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/projects" className="navigation-hamburger_projects">
+            <Link
+              onClick={() => {
+                this.setState({ active: false, close: true });
+              }}
+              to="/projects"
+              className="navigation-hamburger_projects"
+            >
               Projects
             </Link>
-            <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/reviews" className="navigation-hamburger_reviews">
-              Reviews
-            </Link>
-            <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/about" className="navigation-hamburger_about">
+            <Link
+              onClick={() => {
+                this.setState({ active: false, close: true });
+              }}
+              to="/about"
+              className="navigation-hamburger_about"
+            >
               About
             </Link>
-            <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/contact" className="navigation-hamburger_contact">
+            <Link
+              onClick={() => {
+                this.setState({ active: false, close: true });
+              }}
+              to="/contact"
+              className="navigation-hamburger_contact"
+            >
               Contact
             </Link>
-            <Link onClick={()=>{
-              this.setState({ active: false, close: true})
-            }} to="/FAQ" className="navigation-hamburger_FAQ">
+            <Link
+              onClick={() => {
+                this.setState({ active: false, close: true });
+              }}
+              to="/FAQ"
+              className="navigation-hamburger_FAQ"
+            >
               FAQ
             </Link>
           </div>
@@ -115,12 +183,7 @@ export default class App extends Component {
               path="/contact"
               render={(props) => <Contact {...props} />}
             />
-            <Route exact path="/Faq" render={(props) => <Faq {...props} />} />
-            <Route
-              exact
-              path="/reviews"
-              render={(props) => <Reviews {...props} />}
-            />
+            <Route exact path="/FAQ" render={(props) => <Faq {...props} />} />
           </Switch>
         </main>
       </Fragment>

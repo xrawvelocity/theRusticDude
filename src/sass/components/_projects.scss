@@ -7,12 +7,15 @@
   justify-content: center;
   align-items: center;
   height: 90%;
+  animation: fadeIn 1s ease 0.5s;
+  animation-fill-mode: backwards;
 
   &-card {
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0 0 1rem #c4c4c4;
     height: auto;
+    min-height: 450px;
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -43,13 +46,24 @@
       display: flex;
       justify-content: space-between;
       font-size: 2.4rem;
-      padding: 2rem 3rem 5rem;
+      padding: 2rem 3rem 0rem;
 
       &_name {
       }
-      &_review {
+      &_rating {
       }
     }
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_review {
+        font-size: 2rem;
+        font-weight: 400;
+        padding: 2rem 3rem;
+      }
 
     &_date {
       font-size: 2rem;
@@ -87,6 +101,11 @@
       color: #d22;
       font-size: 4rem;
       transition: all 0.2s ease;
+
+      @include respond(phone){
+          top: 30px;
+          right: 30px;
+      }
 
       &:hover {
         cursor: pointer;
