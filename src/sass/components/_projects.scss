@@ -23,6 +23,10 @@
     transform: translateY(0);
     transition: all 0.2s ease;
 
+    @include respond (tab-port) {
+        min-height: 350px;
+    }
+
     &:hover {
       cursor: pointer;
       box-shadow: 0 0 2rem #c0c0c0;
