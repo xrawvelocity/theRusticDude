@@ -54,7 +54,7 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  background-color: #f7f7f1;
+  background-color: #f7f7e7;
   overflow-x: hidden; }
   @media only screen and (max-width: 100em) {
     html {
@@ -84,11 +84,11 @@ a:active {
 
 ::-moz-selection {
   background-color: #e78200;
-  color: #f7f7f1; }
+  color: #f7f7e7; }
 
 ::selection {
   background-color: #e78200;
-  color: #f7f7f1; }
+  color: #f7f7e7; }
 
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -115,7 +115,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   width: 100%;
   z-index: 10000000;
-  background-color: rgba(247, 247, 241, 0.9);
+  background-color: rgba(247, 247, 231, 0.9);
   animation: moveInTop 1s ease 0.5s;
   animation-fill-mode: backwards;
   overflow-x: hidden; }
@@ -220,7 +220,7 @@ body::-webkit-scrollbar-thumb {
         animation-fill-mode: both; } }
     .navigation-hamburger_active > *, .navigation-hamburger_active > *:link, .navigation-hamburger_active > *:visited {
       text-decoration: none;
-      color: #f7f7f1;
+      color: #f7f7e7;
       font-family: "Ubuntu";
       font-size: 2.4rem; }
       .navigation-hamburger_active > *:not(:last-child), .navigation-hamburger_active > *:link:not(:last-child), .navigation-hamburger_active > *:visited:not(:last-child) {
@@ -254,7 +254,7 @@ body::-webkit-scrollbar-thumb {
         animation-fill-mode: both; }
         .navigation-hamburger_close > *, .navigation-hamburger_close > *:link, .navigation-hamburger_close > *:visited {
           text-decoration: none;
-          color: #f7f7f1;
+          color: #f7f7e7;
           font-family: "Ubuntu";
           font-size: 2.4rem; }
           .navigation-hamburger_close > *:not(:last-child), .navigation-hamburger_close > *:link:not(:last-child), .navigation-hamburger_close > *:visited:not(:last-child) {
@@ -375,7 +375,7 @@ body::-webkit-scrollbar-thumb {
       animation-fill-mode: backwards; }
       @media only screen and (max-width: 560px) {
         .home-cta_text {
-          color: #f7f7f1; } }
+          color: #f7f7e7; } }
     .home-cta_button {
       margin: 5rem 0;
       background-color: #e78200;
@@ -389,7 +389,7 @@ body::-webkit-scrollbar-thumb {
       transition: all 0.4s ease; }
       .home-cta_button, .home-cta_button:link, .home-cta_button:visited {
         text-decoration: none;
-        color: #f7f7f1; }
+        color: #f7f7e7; }
       .home-cta_button:hover {
         background-color: #FFA42D;
         color: #fff;
@@ -452,6 +452,10 @@ body::-webkit-scrollbar-thumb {
     @media only screen and (max-width: 65em) {
       .projects-card {
         min-height: 350px; } }
+    .projects-card-add {
+      color: #20a80e;
+      font-size: 6rem;
+      margin: auto; }
     .projects-card:hover {
       cursor: pointer;
       box-shadow: 0 0 2rem #c0c0c0;
@@ -668,6 +672,12 @@ body::-webkit-scrollbar-thumb {
       flex-direction: column;
       position: relative;
       margin-bottom: 5rem; }
+      .home-contact-form-group-image {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 5rem; }
       .home-contact-form-group::after {
         content: "";
         position: relative;
@@ -709,9 +719,19 @@ body::-webkit-scrollbar-thumb {
         font-size: 3rem; }
         .home-contact-form-group__input:hover {
           cursor: text; }
+        .home-contact-form-group__input-file {
+          visibility: hidden;
+          display: none; }
+          .home-contact-form-group__input-file-label {
+            margin: 1rem 0;
+            background-color: #ccc;
+            padding: 1rem 1.5rem; }
+            .home-contact-form-group__input-file-label:hover {
+              background-color: #ddd;
+              cursor: pointer; }
     .home-contact-form-button {
       background-color: #e78200;
-      color: #f7f7f1;
+      color: #f7f7e7;
       font-size: 3rem;
       border-radius: 3px;
       border: none;
@@ -726,3 +746,20 @@ body::-webkit-scrollbar-thumb {
         transform: translateY(-0.5rem);
         box-shadow: 0 0.5rem 0.5rem #131312;
         cursor: pointer; }
+
+.admin {
+  width: 100vw;
+  padding: 0 10%;
+  margin: 20rem auto; }
+  .admin-login {
+    width: 30%;
+    margin: 0 auto; }
+  .admin-popup-content {
+    background-color: #f7f7e7;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 70vh;
+    width: 30vw;
+    padding: 0 5%; }

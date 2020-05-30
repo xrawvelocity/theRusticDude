@@ -27,6 +27,12 @@
         min-height: 350px;
     }
 
+    &-add {
+        color: $green;
+        font-size: 6rem;
+        margin: auto
+    }
+
     &:hover {
       cursor: pointer;
       box-shadow: 0 0 2rem #c0c0c0;

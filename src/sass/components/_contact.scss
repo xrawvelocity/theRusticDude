@@ -7,10 +7,10 @@
   animation-fill-mode: backwards;
 
   &-title {
-      font-size: 3rem;
-      margin-top: 3rem;
-      color: $black;
-      text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    color: $black;
+    text-align: center;
   }
 
   &-text {
@@ -152,6 +152,14 @@
       position: relative;
       margin-bottom: 5rem;
 
+      &-image {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 5rem;
+      }
+
       &::after {
         content: "";
         position: relative;
@@ -195,8 +203,8 @@
           cursor: text;
         }
 
-        @include respond (phone) {
-            bottom: 1rem;
+        @include respond(phone) {
+          bottom: 1rem;
         }
       }
 
@@ -210,6 +218,20 @@
 
         &:hover {
           cursor: text;
+        }
+
+        &-file {
+          visibility: hidden;
+          display: none;
+          &-label {
+            margin: 1rem 0;
+            background-color: #ccc;
+            padding: 1rem 1.5rem;
+            &:hover {
+              background-color: #ddd;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
@@ -229,8 +251,8 @@
       &:hover {
         background-color: $lightaccent;
         color: #fff;
-        transform: translateY(-.5rem);
-        box-shadow: 0 .5rem .5rem $black;
+        transform: translateY(-0.5rem);
+        box-shadow: 0 0.5rem 0.5rem $black;
         cursor: pointer;
       }
     }

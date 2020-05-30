@@ -1,0 +1,23 @@
+.admin {
+  width: 100vw;
+  padding: 0 10%;
+  margin: 20rem auto;
+
+  &-login {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  &-popup {
+    &-content {
+      background-color: $white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 70vh;
+      width: 30vw;
+      padding: 0 5%;
+    }
+  }
+}

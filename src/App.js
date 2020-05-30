@@ -2,9 +2,11 @@ import React, { Component, Fragment } from "react";
 import { Link, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
+import Reviews from "./components/Reviews";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Faq from "./components/FAQ";
+import Faq from "./components/Faq";
+import Admin from "./components/Admin";
 
 export default class App extends Component {
   state = {
@@ -184,6 +186,8 @@ export default class App extends Component {
               render={(props) => <Contact {...props} />}
             />
             <Route exact path="/FAQ" render={(props) => <Faq {...props} />} />
+
+            <Route exact path="/admin" render={(props) => <Admin {...props} />} />
           </Switch>
         </main>
       </Fragment>

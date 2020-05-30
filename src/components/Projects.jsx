@@ -2,31 +2,40 @@ import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
+import firebase from "firebase";
+
 export default class Projects extends Component {
   state = {
-    projects: [
-      {
-        title: "Gray tint chair",
-        customer: "Jorge A.",
-        rating: 5,
-        review: "Very nice woodwork",
-        image: "../images/woodwork.jpg",
-        date: new Date().toDateString(),
-      },
-      {
-        title: "Blue tint table",
-        customer: "Jorge B.",
-        rating: 4,
-        review: "Very nice woodwork indeed",
-        image: "../images/ManuelImage.jpg",
-        date: new Date().toDateString(),
-      },
-    ],
+    projects: [],
     popup: "",
   };
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    firebase
+      .firestore()
+      .collection("projects")
+      .get()
+      .then(async (data) => {
+        let projects = [];
+        data.forEach((doc) => {
+          projects.push({
+            projectId: doc.id,
+            image: doc.data().image,
+            customer: doc.data().customer,
+            rating: doc.data().rating,
+            review: doc.data().review,
+            date: doc.data().date,
+          });
+        });
+        await this.setState({
+          projects: projects.sort((a,b)=>{
+              return b.date - a.date
+          }),
+        });
+        console.log(this.state.projects);
+      })
+      .catch((err) => console.error(err));
   }
 
   loadProjects = () => {
@@ -53,7 +62,7 @@ export default class Projects extends Component {
             </div>
             <p className="projects-card_review">"{project.review}"</p>
           </div>
-          <p className="projects-card_date">{project.date}</p>
+          <p className="projects-card_date">{new Date(project.date.seconds * 1000).toDateString()}</p>
         </div>
       );
     });
@@ -62,15 +71,6 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="projects">
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
-        {this.loadProjects()}
         {this.loadProjects()}
         {this.state.popup !== "" && (
           <div className="projects-popup">
