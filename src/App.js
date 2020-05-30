@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 import Reviews from "./components/Reviews";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Faq from "./components/Faq";
+import FAQ from "./components/FAQ";
 import Admin from "./components/Admin";
 
 export default class App extends Component {
@@ -38,7 +38,7 @@ export default class App extends Component {
             />
           </Link>
           <div className="navigation-links">
-            <Link
+          <Link
               onClick={() => {
                 this.setState({ selected: "projects" });
               }}
@@ -51,6 +51,20 @@ export default class App extends Component {
               }`}
             >
               Projects
+            </Link>
+            <Link
+              onClick={() => {
+                this.setState({ selected: "reviews" });
+              }}
+              to="/reviews"
+              className={`navigation-links_reviews ${
+                this.state.selected === "reviews" ||
+                window.location.href.includes("reviews")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
+              Reviews
             </Link>
             <Link
               onClick={() => {
@@ -140,6 +154,20 @@ export default class App extends Component {
             </Link>
             <Link
               onClick={() => {
+                this.setState({ selected: "reviews" });
+              }}
+              to="/reviews"
+              className={`navigation-links_reviews ${
+                this.state.selected === "reviews" ||
+                window.location.href.includes("reviews")
+                  ? "navigation-links_active"
+                  : null
+              }`}
+            >
+              Reviews
+            </Link>
+            <Link
+              onClick={() => {
                 this.setState({ active: false, close: true });
               }}
               to="/about"
@@ -185,7 +213,7 @@ export default class App extends Component {
               path="/contact"
               render={(props) => <Contact {...props} />}
             />
-            <Route exact path="/FAQ" render={(props) => <Faq {...props} />} />
+            <Route exact path="/FAQ" render={(props) => <FAQ {...props} />} />
 
             <Route exact path="/admin" render={(props) => <Admin {...props} />} />
           </Switch>
