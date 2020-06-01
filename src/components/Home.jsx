@@ -64,7 +64,7 @@ export default class Home extends Component {
           </h4>
           <form
             class="home-contact-form"
-            action="https://formspree.io/xjvojgwr"
+            action="https://formspree.io/xqkyqkad"
             method="POST"
           >
             <div class="home-contact-form-group">

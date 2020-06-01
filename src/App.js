@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 import Reviews from "./components/Reviews";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import FAQ from "./components/FAQ";
+import FAQ from "./components/Faq";
 import Admin from "./components/Admin";
 
 export default class App extends Component {

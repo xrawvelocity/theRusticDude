@@ -4,7 +4,7 @@ export default class Contact extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
-  
+
   render() {
     return (
       <section style={{ marginTop: "20rem" }} className="home-contact">
@@ -13,7 +13,7 @@ export default class Contact extends Component {
         </h4>
         <form
           class="home-contact-form"
-          action="https://formspree.io/xjvojgwr"
+          action="https://formspree.io/xqkyqkad"
           method="POST"
         >
           <div class="home-contact-form-group">
