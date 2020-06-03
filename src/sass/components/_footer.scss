@@ -2,10 +2,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 10vh;
+    height: auto;
     align-items: center;
-    font-size: 3rem;
-    margin-bottom: 3rem;
+    font-size: 2rem;
+    background-color: darken(rgba($white, 0.9), 3);
+    padding: 3rem 0;
+
+    &-contact {
+        & > *:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
+    
 
     & a {
         color: #349;
@@ -13,5 +21,14 @@
         &:hover {
             cursor: pointer;
         }
+    }
+
+    &-logo {
+        @extend .navigation-logo;
+        
+    }
+
+    &-links {
+        
     }
 }

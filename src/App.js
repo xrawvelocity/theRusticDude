@@ -7,6 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import FAQ from "./components/Faq";
 import Admin from "./components/Admin";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class App extends Component {
   state = {
@@ -228,7 +229,33 @@ export default class App extends Component {
           </Switch>
         </main>
         <footer className="footer">
-          Website created by &nbsp;<a href="https://www.vic-dev.com" target="_blank" rel="noopener noreferrer">Victor</a>
+          <div className="footer-logo">
+            <img
+              className="navigation-logo_image"
+              src="./images/theRusticDudeLogoImage.png"
+              alt="logo"
+            />
+          </div>
+          <div className="footer-contact">
+            <p>Phone: (000) 000-0000</p>
+            <p>
+              Email:{" "}
+              <a href="mailto:team@therusticdude.com">team@therusticdude.com</a>
+            </p>
+            <p>
+              Website created by &nbsp;
+              <a
+                href="https://www.vic-dev.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Victor
+              </a>
+            </p>
+          </div>
+          <div className="footer-links">
+            
+          </div>
         </footer>
       </Fragment>
     );
