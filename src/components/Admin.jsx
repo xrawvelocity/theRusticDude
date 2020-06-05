@@ -26,14 +26,13 @@ export default class Admin extends Component {
           projects.push({
             projectId: doc.id,
             image: doc.data().image,
-            customer: doc.data().customer,
-            rating: doc.data().rating,
-            review: doc.data().review,
+            name: doc.data().name,
+            description: doc.data().description,
             date: doc.data().date,
           });
         });
         await this.setState({
-          projects,
+          projects: projects.sort((b,a)=> a.date - b.date),
         });
         console.log(this.state.projects);
       })
@@ -85,16 +84,11 @@ export default class Admin extends Component {
           <h6 className="projects-card_title">{project.title}</h6>
           <div className="projects-card-content">
             <div className="projects-card-customer">
-              <p className="projects-card-customer_name">{project.customer}</p>
-              <p className="projects-card-customer_rating">
-                Rating: {project.rating}/5
-              </p>
+              <p className="projects-card-customer_name">{project.name}</p>
+              
             </div>
-            <p className="projects-card_review">"{project.review}"</p>
+            <p className="projects-card_review">{project.description}</p>
           </div>
-          <p className="projects-card_date">
-            {new Date(project.date.seconds * 1000).toDateString()}
-          </p>
         </div>
       );
     });
@@ -114,9 +108,8 @@ export default class Admin extends Component {
     e.preventDefault();
 
     const newProject = {
-      customer: this.state.name,
-      rating: this.state.rating,
-      review: this.state.review,
+      name: this.state.name,
+      description: this.state.description,
       image: `https://firebasestorage.googleapis.com/v0/b/therusticdude.appspot.com/o/photos%2F${this.state.image}?alt=media`,
       date: new Date(),
     };
@@ -143,14 +136,13 @@ export default class Admin extends Component {
           projects.push({
             projectId: doc.id,
             image: doc.data().image,
-            customer: doc.data().customer,
-            rating: doc.data().rating,
-            review: doc.data().review,
+            name: doc.data().name,
+            description: doc.data().description,
             date: doc.data().date,
           });
         });
         await this.setState({
-          projects,
+          projects: projects.sort((b,a)=> a.date - b.date),
         });
         console.log(this.state.projects);
       })
@@ -255,36 +247,17 @@ export default class Admin extends Component {
                       <input
                         onChange={(e) => this.handleChange(e)}
                         className="home-contact-form-group__input"
-                        type="number"
-                        min="1"
-                        max="5"
-                        placeholder=""
-                        name="rating"
-                        id="rating"
-                        required
-                      />
-                      <label
-                        className="home-contact-form-group__label"
-                        htmlFor="rating"
-                      >
-                        Rating
-                      </label>
-                    </div>
-                    <div className="home-contact-form-group">
-                      <input
-                        onChange={(e) => this.handleChange(e)}
-                        className="home-contact-form-group__input"
                         type="text"
                         placeholder=""
-                        name="review"
-                        id="review"
+                        name="description"
+                        id="description"
                         required
                       />
                       <label
                         className="home-contact-form-group__label"
-                        htmlFor="review"
+                        htmlFor="description"
                       >
-                        Review
+                        Description
                       </label>
                     </div>
                     <div className="home-contact-form-group-image">

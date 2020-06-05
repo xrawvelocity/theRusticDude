@@ -38,7 +38,7 @@ export default class App extends Component {
             />
           </Link>
           <div className="navigation-links">
-          <Link
+            <Link
               onClick={() => {
                 this.setState({ selected: "projects" });
               }}
@@ -205,6 +205,11 @@ export default class App extends Component {
             />
             <Route
               exact
+              path="/reviews"
+              render={(props) => <Reviews {...props} />}
+            />
+            <Route
+              exact
               path="/about"
               render={(props) => <About {...props} />}
             />
@@ -215,9 +220,16 @@ export default class App extends Component {
             />
             <Route exact path="/FAQ" render={(props) => <FAQ {...props} />} />
 
-            <Route exact path="/admin" render={(props) => <Admin {...props} />} />
+            <Route
+              exact
+              path="/admin"
+              render={(props) => <Admin {...props} />}
+            />
           </Switch>
         </main>
+        <footer className="footer">
+          Website created by &nbsp;<a href="https://www.vic-dev.com" target="_blank" rel="noopener noreferrer">Victor</a>
+        </footer>
       </Fragment>
     );
   }

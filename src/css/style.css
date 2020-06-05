@@ -151,7 +151,7 @@ body::-webkit-scrollbar-thumb {
           transform: scale(0.3); } }
       @media only screen and (max-width: 400px) {
         .navigation-logo_image {
-          transform: scale(1); } }
+          transform: scale(0.4); } }
     .navigation-logo_text {
       height: 100px;
       transform: scale(1);
@@ -167,7 +167,7 @@ body::-webkit-scrollbar-thumb {
       @media only screen and (max-width: 400px) {
         .navigation-logo_text {
           transform: scale(0.6);
-          padding-left: 10rem; } }
+          padding-left: 5rem; } }
   .navigation-links {
     display: flex; }
     @media only screen and (max-width: 65em) {
@@ -435,6 +435,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   height: 90%;
+  width: 80%;
   animation: fadeIn 1s ease 0.5s;
   animation-fill-mode: backwards; }
   .projects-card {
@@ -647,6 +648,9 @@ body::-webkit-scrollbar-thumb {
     margin-top: 3rem;
     color: #131312;
     text-align: center; }
+    @media only screen and (max-width: 560px) {
+      .home-contact-title {
+        width: 90%; } }
   .home-contact-text {
     display: flex;
     flex-direction: column;
@@ -771,15 +775,34 @@ body::-webkit-scrollbar-thumb {
   .admin-login {
     width: 30%;
     margin: 0 auto; }
+    @media only screen and (max-width: 65em) {
+      .admin-login {
+        width: 70%; } }
+    @media only screen and (max-width: 560px) {
+      .admin-login {
+        width: 100%; } }
   .admin-popup-content {
     background-color: #f7f7e7;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 70vh;
+    height: 60vh;
     width: 30%;
     padding: 0 5%; }
     @media only screen and (max-width: 65em) {
       .admin-popup-content {
-        width: 70%; } }
+        width: 80%; } }
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  align-items: center;
+  font-size: 3rem;
+  margin-bottom: 3rem; }
+  .footer a {
+    color: #349; }
+    .footer a:hover {
+      cursor: pointer; }

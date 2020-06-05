@@ -22,9 +22,8 @@ export default class Projects extends Component {
           projects.push({
             projectId: doc.id,
             image: doc.data().image,
-            customer: doc.data().customer,
-            rating: doc.data().rating,
-            review: doc.data().review,
+            name: doc.data().name,
+            description: doc.data().description,
             date: doc.data().date,
           });
         });
@@ -43,7 +42,7 @@ export default class Projects extends Component {
       return (
         <div
           onClick={() => {
-            this.setState({ popup: project.image });
+            this.setState({ popup: project });
           }}
           className="projects-card"
         >
@@ -55,14 +54,11 @@ export default class Projects extends Component {
           <h6 className="projects-card_title">{project.title}</h6>
           <div className="projects-card-content">
             <div className="projects-card-customer">
-              <p className="projects-card-customer_name">{project.customer}</p>
-              <p className="projects-card-customer_rating">
-                Rating: {project.rating}/5
-              </p>
+              <p className="projects-card-customer_name">{project.name}</p>
             </div>
-            <p className="projects-card_review">"{project.review}"</p>
+            <p className="projects-card_review">{project.description}</p>
           </div>
-          <p className="projects-card_date">{new Date(project.date.seconds * 1000).toDateString()}</p>
+          
         </div>
       );
     });
@@ -75,7 +71,7 @@ export default class Projects extends Component {
         {this.state.popup !== "" && (
           <div className="projects-popup">
             <img
-              src={this.state.popup}
+              src={this.state.popup.image}
               alt="project"
               className="projects-popup_image"
             />

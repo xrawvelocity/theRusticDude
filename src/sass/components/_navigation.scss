@@ -48,7 +48,7 @@
         transform: scale(0.3);
       }
       @include respond(smallphone) {
-        transform: scale(1);
+        transform: scale(.4);
       }
     }
 
@@ -67,7 +67,7 @@
       }
       @include respond(smallphone) {
         transform: scale(0.6);
-        padding-left: 10rem;
+        padding-left: 5rem;
       }
     }
   }
