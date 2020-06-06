@@ -98,19 +98,6 @@ export default class Home extends Component {
             <div class="home-contact-form-group">
               <input
                 class="home-contact-form-group__input"
-                type="text"
-                placeholder=""
-                name="company"
-                id="company"
-              />
-              <label class="home-contact-form-group__label" for="company">
-                Company/Organization
-              </label>
-            </div>
-
-            <div class="home-contact-form-group">
-              <input
-                class="home-contact-form-group__input"
                 name="message"
                 placeholder=""
                 id="message"

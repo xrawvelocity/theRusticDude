@@ -246,13 +246,11 @@
       text-transform: uppercase;
       margin-top: 3rem;
       align-self: center;
-      transition: all 0.4s ease;
+      transition: all 0.1s ease-out;
 
       &:hover {
-        background-color: $lightaccent;
+        background-color: $accent;
         color: #fff;
-        transform: translateY(-0.5rem);
-        box-shadow: 0 0.5rem 0.5rem $black;
         cursor: pointer;
       }
     }

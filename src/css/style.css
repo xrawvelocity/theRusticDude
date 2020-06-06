@@ -493,7 +493,9 @@ body::-webkit-scrollbar-thumb {
     height: 100vh;
     z-index: 10000000;
     background-color: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(3px); }
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column; }
     .projects-popup_image {
       position: absolute;
       top: 50%;
@@ -504,6 +506,23 @@ body::-webkit-scrollbar-thumb {
       object-fit: cover;
       animation: fadeIn .5s ease-out;
       animation-fill-mode: both; }
+    .projects-popup_btn {
+      border: 2px solid #d22;
+      border-radius: 3px;
+      background-color: rgba(221, 34, 34, 0.1);
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+      width: auto;
+      font-size: 3rem;
+      color: #ddd;
+      padding: 1rem 1.5rem;
+      transition: all .1s ease-out; }
+      .projects-popup_btn:hover {
+        cursor: pointer;
+        background-color: rgba(221, 34, 34, 0.4); }
     .projects-popup_close {
       position: absolute;
       top: 50px;
@@ -739,12 +758,10 @@ body::-webkit-scrollbar-thumb {
       text-transform: uppercase;
       margin-top: 3rem;
       align-self: center;
-      transition: all 0.4s ease; }
+      transition: all 0.1s ease-out; }
       .home-contact-form-button:hover {
-        background-color: #FFA42D;
+        background-color: #e78200;
         color: #fff;
-        transform: translateY(-0.5rem);
-        box-shadow: 0 0.5rem 0.5rem #131312;
         cursor: pointer; }
 
 .admin {
@@ -761,5 +778,8 @@ body::-webkit-scrollbar-thumb {
     left: 50%;
     transform: translate(-50%, -50%);
     height: 70vh;
-    width: 30vw;
+    width: 30%;
     padding: 0 5%; }
+    @media only screen and (max-width: 65em) {
+      .admin-popup-content {
+        width: 70%; } }

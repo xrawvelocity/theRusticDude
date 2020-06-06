@@ -91,6 +91,8 @@
     z-index: 10000000;
     background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
 
     &_image {
       position: absolute;
@@ -102,6 +104,27 @@
       object-fit: cover;
       animation: fadeIn .5s ease-out;
       animation-fill-mode: both;
+    }
+
+    &_btn {
+      border: 2px solid #d22;
+      border-radius: 3px;
+      background-color: rgba(#d22, 0.1);
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: auto;
+      width: auto;
+      font-size: 3rem;
+      color: #ddd;
+      padding: 1rem 1.5rem;
+      transition: all .1s ease-out;
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(#d22, 0.4);
+      }
     }
 
     &_close {

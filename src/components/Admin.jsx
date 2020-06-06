@@ -73,7 +73,7 @@ export default class Admin extends Component {
       return (
         <div
           onClick={() => {
-            this.setState({ popup: project.image });
+            this.setState({ popup: project });
           }}
           className="projects-card"
         >
@@ -132,9 +132,33 @@ export default class Admin extends Component {
       .catch((err) => {
         console.error(err);
       });
+
+    firebase
+      .firestore()
+      .collection("projects")
+      .get()
+      .then(async (data) => {
+        let projects = [];
+        data.forEach((doc) => {
+          projects.push({
+            projectId: doc.id,
+            image: doc.data().image,
+            customer: doc.data().customer,
+            rating: doc.data().rating,
+            review: doc.data().review,
+            date: doc.data().date,
+          });
+        });
+        await this.setState({
+          projects,
+        });
+        console.log(this.state.projects);
+      })
+      .catch((err) => console.error(err));
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="admin">
         {!this.state.auth ? (
