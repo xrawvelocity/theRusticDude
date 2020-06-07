@@ -8,6 +8,11 @@ import Contact from "./components/Contact";
 import FAQ from "./components/Faq";
 import Admin from "./components/Admin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faFacebookF,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default class App extends Component {
   state = {
@@ -229,6 +234,10 @@ export default class App extends Component {
           </Switch>
         </main>
         <footer className="footer">
+          <div className="footer-links">
+            <FontAwesomeIcon className="footer-links_facebook" icon={faFacebookF} />
+            <FontAwesomeIcon className="footer-links_instagram" icon={faInstagram} />
+          </div>
           <div className="footer-logo">
             <img
               className="navigation-logo_image"
@@ -252,9 +261,6 @@ export default class App extends Component {
                 Victor
               </a>
             </p>
-          </div>
-          <div className="footer-links">
-            
           </div>
         </footer>
       </Fragment>

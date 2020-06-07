@@ -1,7 +1,7 @@
 .footer {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: auto;
     align-items: center;
     font-size: 2rem;
@@ -29,6 +29,31 @@
     }
 
     &-links {
-        
+        display: flex;
+        width: 10%;
+        justify-content: space-evenly;
+
+        & > * {
+            font-size: 3.2rem;
+            transition: all .2s ease-out;
+        }
+
+        &_facebook {
+            color:#3b5998;
+
+            &:hover {
+                cursor: pointer;
+                color: #2d4577;
+            }
+        }
+
+        &_instagram {
+            color: #e1306c;
+
+            &:hover {
+                cursor: pointer;
+                color: #c13584;
+            }
+        }
     }
 }

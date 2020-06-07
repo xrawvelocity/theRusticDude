@@ -800,7 +800,7 @@ body::-webkit-scrollbar-thumb {
 .footer {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   height: auto;
   align-items: center;
   font-size: 2rem;
@@ -812,3 +812,20 @@ body::-webkit-scrollbar-thumb {
     color: #349; }
     .footer a:hover {
       cursor: pointer; }
+  .footer-links {
+    display: flex;
+    width: 10%;
+    justify-content: space-evenly; }
+    .footer-links > * {
+      font-size: 3.2rem;
+      transition: all .2s ease-out; }
+    .footer-links_facebook {
+      color: #3b5998; }
+      .footer-links_facebook:hover {
+        cursor: pointer;
+        color: #2d4577; }
+    .footer-links_instagram {
+      color: #e1306c; }
+      .footer-links_instagram:hover {
+        cursor: pointer;
+        color: #c13584; }
