@@ -20,16 +20,16 @@ export default class Home extends Component {
             </Link>
           </div>
           <img
-            src="../images/woodwork.jpg"
-            alt="woodwork"
+            src="../images/detail.png"
+            alt="detail"
             className="home-image1"
           />
         </section>
         <div className="home-divisor"></div>
         <section className="home-main">
           <img
-            src="../images/ManuelImage.jpg"
-            alt="Manuel"
+            src="../images/carry.jpg"
+            alt="carry"
             className="home-image2"
           />
           <div className="home-cta">
@@ -53,8 +53,8 @@ export default class Home extends Component {
             </Link>
           </div>
           <img
-            src="../images/handshake.jpg"
-            alt="woodwork"
+            src="../images/coffee.jpg"
+            alt="coffee"
             className="home-image1"
           />
         </section>

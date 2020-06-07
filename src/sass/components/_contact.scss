@@ -5,6 +5,11 @@
   align-items: center;
   animation: fadeIn 1s ease 0.75s;
   animation-fill-mode: backwards;
+  min-height: 63vh;
+
+  @include respond(phone) {
+    min-height: 72vh;
+  }
 
   &-title {
     font-size: 3rem;
@@ -51,87 +56,6 @@
     @include respond(phone) {
       width: 55rem;
     }
-
-    // &__linkedin {
-    //   &,
-    //   &:link,
-    //   &:visited {
-    //     width: 50px;
-    //     height: 50px;
-    //     background-image: url("../images/logos/linkedinlogo.png");
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     background-position: center;
-    //     transition: all 0.1s ease-in-out;
-
-    //     @include respond(phone) {
-    //       width: 35px;
-    //       height: 35px;
-    //     }
-    //   }
-    //   &:hover {
-    //     transform: scale(1.1);
-    //     cursor: pointer;
-    //   }
-    //   &::after {
-    //     content: "";
-    //     display: table;
-    //     clear: both;
-    //   }
-    // }
-
-    // &__resume {
-    //   &,
-    //   &:link,
-    //   &:visited {
-    //     background-color: #ddd;
-    //     color: #111;
-    //     font-size: 2.2rem;
-    //     border: 1px solid #111;
-    //     text-decoration: none;
-    //     border-radius: 3px;
-    //     padding: 1rem 1.5rem;
-    //     text-transform: uppercase;
-    //     margin: 5rem 0;
-    //     align-self: flex-end;
-    //     transition: all 0.2s ease-out;
-    //   }
-
-    //   &:hover {
-    //     background-color: $black;
-    //     color: #222;
-    //     cursor: pointer;
-    //   }
-    // }
-
-    // &__github {
-    //   &,
-    //   &:link,
-    //   &:visited {
-    //     width: 55px;
-    //     height: 55px;
-    //     background-image: url("../images/logos/githublogo.png");
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     background-position: center;
-    //     transition: all 0.1s ease-in-out;
-
-    //     @include respond(phone) {
-    //       width: 35px;
-    //       height: 35px;
-    //     }
-    //   }
-    //   &:hover {
-    //     transform: scale(1.1);
-    //     cursor: pointer;
-    //   }
-
-    //   &::after {
-    //     content: "";
-    //     display: table;
-    //     clear: both;
-    //   }
-    // }
   }
 
   &-form {
@@ -140,7 +64,7 @@
     justify-content: center;
     align-items: center;
 
-    margin: 10rem auto;
+    margin: 10rem auto 5rem;
     font-size: 2.6rem;
 
     @include respond(phone) {

@@ -160,7 +160,7 @@ export default class App extends Component {
             </Link>
             <Link
               onClick={() => {
-                this.setState({ selected: "reviews" });
+                this.setState({ active: false, close: true });
               }}
               to="/reviews"
               className={`navigation-links_reviews ${
@@ -201,7 +201,7 @@ export default class App extends Component {
             </Link>
           </div>
         </nav>
-        <main>
+        <Fragment>
           <Switch>
             <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route
@@ -232,11 +232,12 @@ export default class App extends Component {
               render={(props) => <Admin {...props} />}
             />
           </Switch>
-        </main>
+        </Fragment>
         <footer className="footer">
           <div className="footer-links">
-            <FontAwesomeIcon className="footer-links_facebook" icon={faFacebookF} />
-            <FontAwesomeIcon className="footer-links_instagram" icon={faInstagram} />
+            <a href="https://www.facebook.com/theRusticDude/" className="footer-links_facebook" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faFacebookF} /></a>
+            <a href="https://www.instagram.com/therusticdude/" className="footer-links_instagram" target="_blank" rel="noopener noreferrer"> <FontAwesomeIcon  icon={faInstagram} /></a>
+            <a href="https://offerup.co/SVwgvyaK86" className="footer-links_offerup" target="_blank" rel="noopener noreferrer"> <img className="footer-links_offerup-image" src="../images/offerup.jpg" alt="offerup" /></a>
           </div>
           <div className="footer-logo">
             <img
@@ -246,7 +247,7 @@ export default class App extends Component {
             />
           </div>
           <div className="footer-contact">
-            <p>Phone: (000) 000-0000</p>
+            <p>Phone: (305) 399-9126</p>
             <p>
               Email:{" "}
               <a href="mailto:team@therusticdude.com">team@therusticdude.com</a>

@@ -75,7 +75,7 @@ body {
   -webkit-font-smoothing: antialiased; }
 
 main {
-  min-height: 70vh; }
+  min-height: 65vh; }
 
 a:link,
 a:visited {
@@ -121,7 +121,7 @@ body::-webkit-scrollbar-thumb {
   background-color: rgba(243, 243, 220, 0.9);
   animation: moveInTop 1s ease 0.5s;
   animation-fill-mode: backwards;
-  overflow-x: hidden; }
+  overflow: hidden; }
   @media only screen and (max-width: 560px) {
     .navigation {
       position: fixed;
@@ -156,7 +156,7 @@ body::-webkit-scrollbar-thumb {
         .navigation-logo_image {
           transform: scale(0.4); } }
     .navigation-logo_text {
-      height: 100px;
+      height: 200px;
       transform: scale(1);
       margin-left: -5rem; }
       @media only screen and (max-width: 65em) {
@@ -396,8 +396,6 @@ body::-webkit-scrollbar-thumb {
       .home-cta_button:hover {
         background-color: #FFA42D;
         color: #fff;
-        transform: translateY(-0.5rem);
-        box-shadow: 0 0.5rem 0.5rem #131312;
         cursor: pointer; }
       .home-cta_button::before, .home-cta_button::after {
         clear: both;
@@ -414,12 +412,13 @@ body::-webkit-scrollbar-thumb {
       .home-image1 {
         clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
         width: 100%;
-        filter: brightness(0.5); } }
+        filter: brightness(0.5);
+        object-position: 40% 0%; } }
   .home-image2 {
     width: 55%;
     height: 100%;
     clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
-    background-position: left;
+    background-position: right;
     object-fit: cover;
     animation: moveInLeft 1s ease 0.75s;
     animation-fill-mode: backwards; }
@@ -427,7 +426,8 @@ body::-webkit-scrollbar-thumb {
       .home-image2 {
         clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
         width: 100%;
-        filter: brightness(0.5); } }
+        filter: brightness(0.5);
+        object-position: 70% 0%; } }
 
 .projects {
   display: grid;
@@ -440,7 +440,8 @@ body::-webkit-scrollbar-thumb {
   height: 90%;
   width: 80%;
   animation: fadeIn 1s ease 0.5s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  min-height: 63vh; }
   .projects-card {
     background-color: #fff;
     border-radius: 3px;
@@ -543,7 +544,7 @@ body::-webkit-scrollbar-thumb {
         color: #a00; }
 
 .faq {
-  height: 90vh;
+  min-height: 83vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -551,6 +552,9 @@ body::-webkit-scrollbar-thumb {
   padding: 5rem 0;
   animation: fadeIn 1s ease 0.5s;
   animation-fill-mode: backwards; }
+  @media only screen and (max-width: 560px) {
+    .faq {
+      min-height: 87vh; } }
 
 .accordion-list {
   list-style: none;
@@ -559,8 +563,7 @@ body::-webkit-scrollbar-thumb {
   background-color: #fff;
   max-width: 30vw;
   border-radius: 0.4rem;
-  overflow: hidden;
-  box-shadow: 0 0 0.8rem 0.1rem rgba(0, 0, 0, 0.06), 0 20px 30px -10px rgba(0, 0, 0, 0.2); }
+  overflow: hidden; }
   @media only screen and (max-width: 65em) {
     .accordion-list {
       max-width: 80vw; } }
@@ -645,7 +648,11 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   animation: fadeIn 1s ease 0.75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+  min-height: 63vh; }
+  @media only screen and (max-width: 560px) {
+    .home-contact {
+      min-height: 72vh; } }
   .home-contact-title {
     font-size: 3rem;
     margin-top: 3rem;
@@ -685,7 +692,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10rem auto;
+    margin: 10rem auto 5rem;
     font-size: 2.6rem; }
     @media only screen and (max-width: 560px) {
       .home-contact-form {
@@ -806,26 +813,57 @@ body::-webkit-scrollbar-thumb {
   font-size: 2rem;
   background-color: rgba(243, 243, 220, 0.9);
   padding: 3rem 0; }
-  .footer-contact > *:not(:first-child) {
-    margin-top: 1rem; }
+  .footer-contact {
+    width: auto; }
+    .footer-contact > *:not(:first-child) {
+      margin-top: 1.5rem; }
   .footer a {
     color: #349; }
     .footer a:hover {
       cursor: pointer; }
+  @media only screen and (max-width: 65em) {
+    .footer-logo {
+      display: none; } }
   .footer-links {
     display: flex;
-    width: 10%;
-    justify-content: space-evenly; }
+    width: 15%;
+    justify-content: center;
+    align-items: center; }
+    @media only screen and (max-width: 560px) {
+      .footer-links {
+        width: 40%; } }
     .footer-links > * {
       font-size: 3.2rem;
-      transition: all .2s ease-out; }
-    .footer-links_facebook {
-      color: #3b5998; }
-      .footer-links_facebook:hover {
+      transition: all 0.2s ease-out;
+      padding: 1rem; }
+    .footer-links_facebook, .footer-links_facebook:link, .footer-links_facebook:visited {
+      color: #3b5998;
+      margin-right: 5rem; }
+      @media only screen and (max-width: 560px) {
+        .footer-links_facebook, .footer-links_facebook:link, .footer-links_facebook:visited {
+          margin-right: 2rem; } }
+      .footer-links_facebook:hover, .footer-links_facebook:link:hover, .footer-links_facebook:visited:hover {
         cursor: pointer;
         color: #2d4577; }
-    .footer-links_instagram {
-      color: #e1306c; }
-      .footer-links_instagram:hover {
+    .footer-links_instagram, .footer-links_instagram:link, .footer-links_instagram:visited {
+      color: #e1306c;
+      margin-right: 5rem; }
+      @media only screen and (max-width: 560px) {
+        .footer-links_instagram, .footer-links_instagram:link, .footer-links_instagram:visited {
+          margin-right: 2rem; } }
+      .footer-links_instagram:hover, .footer-links_instagram:link:hover, .footer-links_instagram:visited:hover {
         cursor: pointer;
         color: #c13584; }
+    .footer-links_offerup, .footer-links_offerup:link, .footer-links_offerup:visited {
+      color: #008272;
+      margin-right: 5rem; }
+      @media only screen and (max-width: 560px) {
+        .footer-links_offerup, .footer-links_offerup:link, .footer-links_offerup:visited {
+          margin-right: 2rem; } }
+      .footer-links_offerup:hover, .footer-links_offerup:link:hover, .footer-links_offerup:visited:hover {
+        cursor: pointer;
+        color: #008257; }
+    .footer-links_offerup-image {
+      margin-top: 1rem;
+      height: 3.2rem;
+      width: 3.2rem; }

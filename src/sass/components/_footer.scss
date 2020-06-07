@@ -1,59 +1,111 @@
 .footer {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    height: auto;
-    align-items: center;
-    font-size: 2rem;
-    background-color: darken(rgba($white, 0.9), 3);
-    padding: 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  height: auto;
+  align-items: center;
+  font-size: 2rem;
+  background-color: darken(rgba($white, 0.9), 3);
+  padding: 3rem 0;
 
-    &-contact {
-        & > *:not(:first-child) {
-            margin-top: 1rem;
-        }
+  &-contact {
+      width: auto;
+    & > *:not(:first-child) {
+      margin-top: 1.5rem;
     }
-    
+  }
 
-    & a {
-        color: #349;
+  & a {
+    color: #349;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-logo {
+    @extend .navigation-logo;
+
+    @include respond(tab-port) {
+      display: none;
+    }
+  }
+
+  &-links {
+    display: flex;
+    width: 15%;
+    justify-content: center;
+    align-items: center;
+
+    @include respond (phone) {
+        width: 40%;
+    }
+
+    & > * {
+      font-size: 3.2rem;
+      transition: all 0.2s ease-out;
+      padding: 1rem;
+    }
+
+    &_facebook {
+      &,
+      &:link,
+      &:visited {
+        color: #3b5998;
+        margin-right: 5rem;
+
+        @include respond(phone) {
+          margin-right: 2rem;
+        }
 
         &:hover {
-            cursor: pointer;
+          cursor: pointer;
+          color: #2d4577;
         }
+      }
     }
 
-    &-logo {
-        @extend .navigation-logo;
-        
+    &_instagram {
+      &,
+      &:link,
+      &:visited {
+        color: #e1306c;
+
+        margin-right: 5rem;
+
+        @include respond(phone) {
+          margin-right: 2rem;
+        }
+
+        &:hover {
+          cursor: pointer;
+          color: #c13584;
+        }
+      }
     }
 
-    &-links {
-        display: flex;
-        width: 10%;
-        justify-content: space-evenly;
+    &_offerup {
+      &,
+      &:link,
+      &:visited {
+        color: #008272;
+        margin-right: 5rem;
 
-        & > * {
-            font-size: 3.2rem;
-            transition: all .2s ease-out;
+        @include respond(phone) {
+          margin-right: 2rem;
         }
 
-        &_facebook {
-            color:#3b5998;
-
-            &:hover {
-                cursor: pointer;
-                color: #2d4577;
-            }
+        &:hover {
+          cursor: pointer;
+          color: #008257;
         }
+      }
 
-        &_instagram {
-            color: #e1306c;
-
-            &:hover {
-                cursor: pointer;
-                color: #c13584;
-            }
-        }
+      &-image {
+          margin-top: 1rem;
+          height: 3.2rem;
+          width: 3.2rem;
+      }
     }
+  }
 }

@@ -7,7 +7,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <section style={{ marginTop: "20rem" }} className="home-contact">
+      <section style={{ margin: "20rem 0 0" }} className="home-contact">
         <h4 className="home-contact-title">
           So what will it be? A chair, a table, or something else?
         </h4>
@@ -43,7 +43,7 @@ export default class Contact extends Component {
               Email
             </label>
           </div>
-          
+
           <div class="home-contact-form-group">
             <input
               class="home-contact-form-group__input"

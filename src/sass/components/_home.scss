@@ -89,8 +89,6 @@
       &:hover {
         background-color: $lightaccent;
         color: #fff;
-        transform: translateY(-0.5rem);
-        box-shadow: 0 0.5rem 0.5rem $black;
         cursor: pointer;
       }
 
@@ -117,6 +115,7 @@
       clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
       width: 100%;
       filter: brightness(0.5);
+      object-position: 40% 0%;
     }
   }
 
@@ -125,7 +124,7 @@
     height: 100%;
 
     clip-path: polygon(0% 0%, 75% 0%, 100% 100%, 25% 100%);
-    background-position: left;
+    background-position: right;
     object-fit: cover;
 
     animation: moveInLeft 1s ease 0.75s;
@@ -135,6 +134,7 @@
       clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 10% 100%);
       width: 100%;
       filter: brightness(0.5);
+      object-position: 70% 0%;
     }
   }
 }
