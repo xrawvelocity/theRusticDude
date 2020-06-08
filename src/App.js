@@ -9,7 +9,6 @@ import FAQ from "./components/Faq";
 import Admin from "./components/Admin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebook,
   faFacebookF,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
