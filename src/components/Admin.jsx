@@ -120,7 +120,7 @@ export default class Admin extends Component {
       .add(newProject)
       .then((doc) => {
         console.log(`Project ${doc.id} created successfully`);
-        this.setState({ add: false });
+        this.setState({ add: false, image: "" });
       })
       .catch((err) => {
         console.error(err);

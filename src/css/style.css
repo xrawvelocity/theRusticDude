@@ -431,7 +431,7 @@ body::-webkit-scrollbar-thumb {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(auto, 320px));
   column-gap: 40px;
   row-gap: 40px;
   margin: 200px auto;
@@ -448,7 +448,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 1rem #c4c4c4;
     height: auto;
     min-height: 450px;
-    width: 300px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     color: #131312;
@@ -456,7 +456,8 @@ body::-webkit-scrollbar-thumb {
     transition: all 0.2s ease; }
     @media only screen and (max-width: 65em) {
       .projects-card {
-        min-height: 350px; } }
+        min-height: 350px;
+        width: 95%; } }
     .projects-card-add {
       color: #20a80e;
       font-size: 6rem;
@@ -777,6 +778,17 @@ body::-webkit-scrollbar-thumb {
         background-color: #e78200;
         color: #fff;
         cursor: pointer; }
+
+.about {
+  min-height: 63vh;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 22rem; }
+  .about-video {
+    width: 530px;
+    height: 300px; }
 
 .admin {
   width: 100vw;

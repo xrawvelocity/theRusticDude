@@ -1,0 +1,14 @@
+.about {
+  min-height: 63vh;
+
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 22rem;
+
+  &-video {
+      width: 530px;
+      height: 300px;
+  }
+}

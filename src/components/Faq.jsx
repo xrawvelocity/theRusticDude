@@ -14,25 +14,22 @@ export default class FAQ extends Component {
   }
 }
 
-const paragraph =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet natus sint provident vel ab reprehenderit cum soluta, suscipit facere nisi sed earum repellendus fuga debitis, nam molestiae minima voluptates possimus.";
-
 const data = [
   {
-    title: "Pricing plans",
-    paragraph,
+    title: "How do you decide how much to charge your customers?",
+    paragraph: "Based on how big and complex their custom furniture is.",
   },
   {
-    title: "How to apply",
-    paragraph,
+    title: "What kind of wood do you work with?",
+    paragraph: "We use soft yellow pine which we then might stain to fit the customer's liking.",
   },
   {
-    title: "Purchasing process",
-    paragraph,
+    title: "How will I pay for my custom furniture?",
+    paragraph: "We currently only accept cash, checks, or cash app.",
   },
   {
-    title: "Usage guides",
-    paragraph,
+    title: "Is your furniture fit for the outdoors?",
+    paragraph: "Yes it is! We use a UV and water protecting coat on all our works.",
   },
 ];
 
