@@ -786,9 +786,16 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   flex-direction: column;
   margin-top: 22rem; }
+  @media only screen and (max-width: 560px) {
+    .about {
+      min-height: 70vh; } }
   .about-video {
     width: 530px;
     height: 300px; }
+    @media only screen and (max-width: 560px) {
+      .about-video {
+        width: 90vw;
+        height: 30vh; } }
 
 .admin {
   width: 100vw;

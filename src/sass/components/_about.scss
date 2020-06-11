@@ -7,8 +7,17 @@
   flex-direction: column;
   margin-top: 22rem;
 
+  @include respond(phone){
+    min-height: 70vh;
+  }
+
   &-video {
       width: 530px;
       height: 300px;
+
+      @include respond (phone) {
+        width: 90vw;
+        height: 30vh;
+      }
   }
 }
