@@ -59,20 +59,6 @@ export default class App extends Component {
             </Link>
             <Link
               onClick={() => {
-                this.setState({ selected: "reviews" });
-              }}
-              to="/reviews"
-              className={`navigation-links_reviews ${
-                this.state.selected === "reviews" ||
-                window.location.href.includes("reviews")
-                  ? "navigation-links_active"
-                  : null
-              }`}
-            >
-              Reviews
-            </Link>
-            <Link
-              onClick={() => {
                 this.setState({ selected: "about" });
               }}
               to="/about"
@@ -156,20 +142,6 @@ export default class App extends Component {
               className="navigation-hamburger_projects"
             >
               Projects
-            </Link>
-            <Link
-              onClick={() => {
-                this.setState({ active: false, close: true });
-              }}
-              to="/reviews"
-              className={`navigation-links_reviews ${
-                this.state.selected === "reviews" ||
-                window.location.href.includes("reviews")
-                  ? "navigation-links_active"
-                  : null
-              }`}
-            >
-              Reviews
             </Link>
             <Link
               onClick={() => {
